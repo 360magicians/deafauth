@@ -10,7 +10,7 @@ How **vertical AI** could integrate with DeafAuth using Firebase and React.
 
 You could use a Cloud Function (or external API) that receives a user’s profile and returns recommended accommodations.
 
-```javascript name=functions/index.js
+\`\`\`javascript name=functions/index.js
 // Example Firebase Cloud Function (Node.js)
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
@@ -31,13 +31,13 @@ exports.recommendAccommodations = functions.https.onCall(async (data, context) =
   // ...more AI logic, potentially using ML models
   return { accommodations };
 });
-```
+\`\`\`
 
 ---
 
 ## 2. **How to Call This AI Endpoint from React**
 
-```javascript name=src/hooks/useAccommodations.js
+\`\`\`javascript name=src/hooks/useAccommodations.js
 import { useEffect, useState } from "react";
 import { getFunctions, httpsCallable } from "firebase/functions";
 import { auth, db } from "../firebase";
@@ -61,13 +61,13 @@ export function useAccommodations() {
   }, []);
   return accommodations;
 }
-```
+\`\`\`
 
 ---
 
 ## 3. **React Example: Apply AI Recommendations**
 
-```javascript name=src/components/AccessibilitySettings.js
+\`\`\`javascript name=src/components/AccessibilitySettings.js
 import React from "react";
 import { useAccommodations } from "../hooks/useAccommodations";
 
@@ -83,7 +83,7 @@ export default function AccessibilitySettings() {
     </div>
   );
 }
-```
+\`\`\`
 
 ---
 
