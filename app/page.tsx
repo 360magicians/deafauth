@@ -1,7 +1,11 @@
 "use client"
 
-import { useAccommodations } from "../src_hooks_useAccommodations_Version2"
+import Auth from "../components/Auth";
 
-export default function SyntheticV0PageForDeployment() {
-  return <useAccommodations />
+export default function Page() {
+  return (
+    <div className="container mx-auto p-4">
+      <Auth />
+    </div>
+  );
 }
